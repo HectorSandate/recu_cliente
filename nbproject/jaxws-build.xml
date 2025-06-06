@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-recu_diaz_web_operaciones_9a" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a"/>
+        <property name="wsdl-recu_diaz_web_operaciones_9a" location="xml-resources/web-service-references/recu_diaz_web_operaciones_9a/wsdl/localhost_8080/recu_diaz_9a/recu_diaz_web_operaciones_9a.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a" destdir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a" wsdl="${wsdl-recu_diaz_web_operaciones_9a}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/recu_diaz_9a/recu_diaz_web_operaciones_9a?wsdl" xnocompile="true" xendorsed="true" package="diaz">
+            <depends file="${wsdl-recu_diaz_web_operaciones_9a}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-recu_diaz_web_operaciones_9a" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/recu_diaz_web_operaciones_9a"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/diaz"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-recu_diaz_web_operaciones_9a"/>
+</project>
